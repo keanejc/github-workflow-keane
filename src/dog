@@ -1,0 +1,19 @@
+public class Dog extends Pet{
+    String name;
+
+    public Dog( String name ){
+        name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String new){
+        name = new;
+    }
+
+    public void cuddle(){
+        System.out.println( name + " barks and wags its tail");
+    }
+}

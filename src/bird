@@ -1,0 +1,19 @@
+public class Bird extends Pet{
+    String name;
+
+    public Bird( String name ){
+        name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String new){
+        name = new;
+    }
+
+    public void cuddle(){
+        System.out.println( name + " tries to bite you");
+    }
+}

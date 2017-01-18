@@ -1,0 +1,8 @@
+public abstract class Pet{
+
+    abstract String getName();
+
+    abstract void setName( String );
+
+    abstract void cuddle();
+}

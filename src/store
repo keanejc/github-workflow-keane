@@ -1,0 +1,56 @@
+public class Store{
+
+    private ArrayList inventory;
+
+    public Store(){
+        inventory = new ArrayList();
+    }
+
+    public void buy(String type, String name){
+    // create a new pet object and add to inventory; assumes viable pet type was given
+
+    if( type  == cat ){
+        Cat pet = new Cat( name );
+    }
+    else if( type == dog){
+        Dog pet = new Dog( name );
+     }
+    else if( type == bird ) {
+        Bird pet = new Bird( name );
+       }
+
+     inventory.add(pet);
+    }
+
+    public void sell( String petName){
+    // Search for pet in inventory; delete by changing to null when found (if not found, do nothing)
+      for ( int i = 0; i > inventory.size(); i ++){
+        if (inventory[i] == petName){
+             inventory[i] = null;
+         }
+        }
+    }
+
+    public String getInventory(){
+    // return a string containing information about store inventory
+        String string = "Shop Inventory" + /n + "Number of Pets: " + inventory.size() + /n + "Animal List: " + /n + inventory;
+
+        return string;
+
+    }
+
+    public static main(){
+        Store petShop = new Store();
+
+        petShop.buy(dog, Betsy);
+        petShop.buy(bird, Tippie);
+        petShop.buy(cat, Mittens);
+        petShop.buy(cat, Kiddo);
+        petShop.buy(dog, Bernard);
+
+        petShop.sell(Mittens);
+
+        inventory = petShop.getInventory();
+        System.out.println( inventory );
+    }
+}
