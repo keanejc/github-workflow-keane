@@ -12,21 +12,27 @@ public class Store {
 
     public void buy(String type, String name){
         // create a new pet object and add to inventory; assumes viable pet type was given
+        type = type.toLowerCase();
+        if( type.equals("cat")){
+            inventory.add( new Cat(name) );
 
-        if( type.equals( "cat") ){
-            Cat pet = new Cat( name );
-            inventory.add( pet );
         }
-        else if( type.equals( "dog")){
-            Dog pet = new Dog( name );
-            inventory.add( pet );
-        }
-        else if( type.equals( "bird") ) {
-            Bird pet = new Bird( name );
-            inventory.add( pet );
-        }
+        else if( type.equals("dog")){
+            inventory.add( new Dog(name) );
 
+        }
+        else if( type.equals("bird")){
+            inventory.add( new Bird(name) );
 
+        }
+       /* switch(type.toLowerCase()){
+            case "cat":
+                inventory.add( new Cat(name) );
+            case "dog":
+                inventory.add( new Dog(name) );
+            case "bird":
+                inventory.add( new Bird(name) );
+        }*/
     }
 
     public void sell( String petName){
@@ -40,13 +46,14 @@ public class Store {
 
     public String getInventory(){
         // return a string containing information about store inventory
-        String string = "Shop Inventory" + "/n" + "Number of Pets: " + inventory.size() + "/n" + "Animal List: " + "/n" + inventory;
+        String string = "Shop Inventory" + "\n" + "Number of Pets: " + inventory.size() + "\n" + "Animal List: " + "\n" + inventory;
 
         return string;
 
     }
 
-    public void main(){
+
+    public static void main( String args[]){
         Store petShop = new Store();
 
         petShop.buy("dog", "Betsy");
